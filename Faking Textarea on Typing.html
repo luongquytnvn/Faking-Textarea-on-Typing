@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faking Textarea on Typing</title>
+</head>
+<body>
+<center>
+    <h2>Type anthing slowly</h2>
+    <textarea id="idtext" name="txt" cols="60" rows="10" onkeyup="danhchu()"></textarea>
+</center>
+<script>
+    var a = 'Tôi là tôi';
+    var result = [];
+    let count =0;
+    function danhchu() {
+        for (;count<a.length;) {
+            result.push(a[count]);
+            document.getElementById('idtext').value = result.join('');
+            count++;
+            if (count==a.length) {
+                count=0;
+                result=[];
+            }
+            break;
+        }
+    }
+</script>
+</body>
+</html>
